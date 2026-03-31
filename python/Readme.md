@@ -125,3 +125,29 @@ Run via PVM
 * PVM is the **engine behind execution**
 
 
+# Mutable vs Immutable
+
+## Mutable
+
+* Can be changed (in memory)
+* Examples: list, dict, set
+
+## Immutable
+
+* Cannot be changed (in memory)
+* Examples: int, float, str, tuple
+
+# Important Notes
+
+* Varibles in python are just name tags they don't have data types
+ where as objects(memory location) have data types 
+
+
+l1 = [1,2,3]
+l2 = [1,2,3]
+l3 = l1
+
+l1 == l2 # True (Value comparison)
+l1 is l2 # False (Memory location comparison)
+l1 is l3 # True (Memory location comparison)
+
