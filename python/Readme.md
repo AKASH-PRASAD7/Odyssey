@@ -143,11 +143,11 @@ Run via PVM
  where as objects(memory location) have data types 
 
 
-l1 = [1,2,3]
-l2 = [1,2,3]
-l3 = l1
 
-l1 == l2 # True (Value comparison)
-l1 is l2 # False (Memory location comparison)
-l1 is l3 # True (Memory location comparison)
+| Function  | Purpose                    | Output for `"hello"` |
+| --------- | -------------------------- | -------------------- |
+| `repr()`  | Debugging / developer view | `'hello'`            |
+| `str()`   | User-friendly display      | `hello`              |
+| `print()` | Display to console         | `hello`              |
+
 

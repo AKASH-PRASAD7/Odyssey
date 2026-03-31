@@ -45,3 +45,7 @@ l3 = l1
 l1 == l2 # True (Value comparison)
 l1 is l2 # False (Memory location comparison)
 l1 is l3 # True (Memory location comparison)
+
+
+1 < 2 < 3 # True
+1 < 2 and 2 < 3 # True
