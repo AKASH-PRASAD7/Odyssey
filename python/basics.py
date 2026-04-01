@@ -159,3 +159,34 @@ print(squared) # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 
 
 dict.fromkeys(["name", "age", "city"], "unknown")
 print(dict.fromkeys(["name", "age", "city"], "unknown")) # {'name': 'unknown', 'age': 'unknown', 'city': 'unknown'}
+
+
+# Set
+
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+print(set1.union(set2))
+print(set1.intersection(set2))
+print(set1.difference(set2))
+print(set1.symmetric_difference(set2))
+print(set1.issubset(set2))
+print(set1.issuperset(set2))
+print(set1.isdisjoint(set2))
+
+
+# Tuple
+
+tuple1 = (1, 2, 3, 4, 5)
+tuple2 = (4, 5, 6, 7, 8)
+
+print(tuple1.union(tuple2))
+print(tuple1.intersection(tuple2))
+print(tuple1.difference(tuple2))
+print(tuple1.symmetric_difference(tuple2))
+print(tuple1.issubset(tuple2))
+print(tuple1.issuperset(tuple2))
+print(tuple1.isdisjoint(tuple2))
+
+
+# 
