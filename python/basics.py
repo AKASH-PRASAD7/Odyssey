@@ -189,4 +189,31 @@ print(tuple1.issuperset(tuple2))
 print(tuple1.isdisjoint(tuple2))
 
 
-# 
+# Itearables
+  
+__iter__() # returns iterator
+__next__() # returns next item
+
+iter() # returns iterator
+next() # returns next item
+
+
+# Functions
+ 
+def add(a=1,b=2):
+    return a+b
+
+print(add())
+print(add(2,3))
+
+
+# Lambda Functions (Anonymous Functions)
+# Use case: when you need a function for a short period of time
+
+add = lambda a, b: a + b
+print(add(1, 2))
+
+def sum_all(*args):
+    return sum(args)
+
+print(sum_all(1, 2, 3, 4, 5))
