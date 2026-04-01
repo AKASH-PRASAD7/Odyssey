@@ -49,3 +49,113 @@ l1 is l3 # True (Memory location comparison)
 
 1 < 2 < 3 # True
 1 < 2 and 2 < 3 # True
+
+
+# String formatting
+
+name = "Akash"
+age = 21
+
+# Old way
+print("Name: %s, Age: %d" % (name, age))
+
+# Better way
+print("Name: {}, Age: {}".format(name, age))
+
+# Best way (Python 3.6+)
+print(f"Name: {name}, Age: {age}")
+
+# String methods
+
+name = "Akash"
+
+print(len(name)) # Length of string
+print(name.upper()) # Convert to uppercase
+print(name.lower()) # Convert to lowercase
+print(name[1:3]) # Slicing
+print(name.capitalize()) # Capitalize first letter
+print(name.swapcase()) # Swap case
+print(name.replace("Akash", "John")) # Replace substring
+print(name.split(",")) # Split by comma returns list
+print(name.join(["Akash", "Cena"])) # Join list into string
+print(name.find("Akash")) # Find index of substring
+print(name.index("Akash")) # Find index of substring
+print(name.count("a")) # Count occurrences of substring
+print(name.strip()) # Remove whitespace
+ 
+for i in name:
+    print(i) # akash
+
+
+# List
+
+basket = ["apple", "banana", "cherry", "orange"]
+
+for fruit in basket:
+    print(fruit)
+
+if "kiwi" in basket:
+    print("kiwi is in the basket")
+else:
+    print("kiwi is not in the basket")
+
+basket.append("kiwi")
+print(basket) # ["apple", "banana", "cherry", "orange", "kiwi"]
+
+basket.remove("kiwi")
+print(basket) # ["apple", "banana", "cherry", "orange"]
+
+basket.pop()
+print(basket)    # ["apple", "banana", "cherry"]
+
+basket.insert(1, "kiwi")
+print(basket) # ["apple", "kiwi", "banana", "cherry"]
+
+basket.sort()
+print(basket) # ["apple", "banana", "cherry", "kiwi"]
+
+newBasket = baset # reference
+newBasket = basket[:] # deep copy
+newBasket = basket.copy() # shallow copy
+
+# List Comprehension
+
+squares = [x**2 for x in range(10)]
+print(squares) # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# List Comprehension with condition
+
+squares = [x**2 for x in range(10) if x % 2 == 0]
+print(squares) # [0, 4, 16, 36, 64]
+
+# List Comprehension with nested loops
+
+squares = [x**2 for x in range(10) for y in range(10)]
+print(squares) # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+
+# Dictionary
+
+person = {"name": "John", "age": 30, "city": "New York"}
+
+print(person["name"])
+
+for key, value in person.items():
+    print(key, value)
+
+for key in person.keys():
+    print(key)
+
+for value in person.values():
+    print(value)
+
+if "name" in person:
+    print("name is in the dictionary")
+else:
+    print("name is not in the dictionary")
+
+squared = {x: x**2 for x in range(10)}
+print(squared) # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+dict.fromkeys(["name", "age", "city"], "unknown")
+print(dict.fromkeys(["name", "age", "city"], "unknown")) # {'name': 'unknown', 'age': 'unknown', 'city': 'unknown'}
