@@ -217,3 +217,40 @@ def sum_all(*args):
     return sum(args)
 
 print(sum_all(1, 2, 3, 4, 5))
+
+# Kwargs
+
+def sum_all(**kwargs):
+    return sum(kwargs.values())
+
+print(sum_all(a=1, b=2, c=3, d=4, e=5))
+
+# Pass keyword: pass is used to skip a line or block of code
+
+def add(a, b):
+    pass
+
+print(add(1, 2)) # None
+
+# Generators
+
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a # Pauses the function and returns the value
+        a, b = b, a + b
+
+for i in fibonacci():
+    print(i)
+    if i > 100:
+        break
+
+
+# Closure
+
+def outer_function(msg):
+    def inner_function():
+        print(msg)
+    return inner_function
+
+outer_function("Hello")()
