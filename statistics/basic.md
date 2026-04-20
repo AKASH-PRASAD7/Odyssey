@@ -1,35 +1,55 @@
-## Normal Distribution
+# Statistics: Quick Notes
 
-The normal distribution, also known as the Gaussian distribution, is a continuous probability distribution that is symmetric about its mean. It is characterized by its bell-shaped curve and is defined by two parameters: the mean (μ) and the standard deviation (σ).
+## 1. Population vs. Sample
+- **Population ($N$):** The *entire* group of items or individuals you want to study.
+- **Sample ($n$):** A specific, smaller subset chosen from the population to estimate its properties.
 
-## Population
+---
 
-In statistics, a population refers to the entire group of individuals or items that we are interested in studying. It can be finite or infinite, and it can consist of people, animals, objects, or events. The population is often denoted by the symbol N.
+## 2. Mean (Average)
+The central value of a dataset. Add all numbers and divide by the count.
 
-## Estimated Parameters
+### A. Population Mean ($\mu$)
+**Explanation:** The true, exact average of the entire population.
+**Formula:** $\mu = \frac{\sum x}{N}$
 
-Estimated parameters are values that are calculated from a sample of data to make inferences about the population. These parameters are used to estimate the true values of the population parameters. Common estimated parameters include the sample mean, sample standard deviation, and sample proportion.
+### B. Sample/Estimated Mean ($\bar{x}$)
+**Explanation:** The average of the sample. Used as a best-guess estimate for the population mean ($\mu$).
+**Formula:** $\bar{x} = \frac{\sum x}{n}$
 
-## Population Mean , Estimated Mean
+---
 
-The population mean (μ) is the average of all the values in the population. It is calculated by summing all the values and dividing by the total number of values in the population.
+## 3. Variance
+Measures how spread out the numbers are from the mean. (Higher number = more spread).
 
-The estimated mean (x̄) is the average of the values in a sample drawn from the population. It is calculated by summing all the values in the sample and dividing by the total number of values in the sample. The estimated mean is used as an estimate of the population mean when we do not have access to the entire population.
+### A. Population Variance ($\sigma^2$)
+**Explanation:** The exact spread of the complete population. Divide by $N$.
+**Formula:** $\sigma^2 = \frac{\sum(x - \mu)^2}{N}$
 
-# Population variance , Estimated Variance
+### B. Sample/Estimated Variance ($s^2$)
+**Explanation:** The estimated spread. Crucially, we divide by $(n - 1)$ instead of $n$. This is called Bessel's correction, which prevents us from underestimating the true spread.
+**Formula:** $s^2 = \frac{\sum(x - \bar{x})^2}{n - 1}$
 
-The population variance (σ²) is the square of the population standard deviation and is calculated using the formula:
-σ² = Σ(x - μ)² / N
-The estimated variance (s²) is the square of the estimated standard deviation and is calculated using the formula:
-s² = Σ(x - x̄)² / (n - 1)
+---
 
-Where x represents each value in the sample, x̄ is the estimated mean, and n is the total number of values in the sample. The estimated variance is used as an estimate of the population variance when we do not have access to the entire population.
+## 4. Standard Deviation
+The exact square root of the Variance. It brings the spread measurement back to the same unit as the original data.
 
-## Population Standard Deviation , Estimated Standard Deviation
+### A. Population Standard Deviation ($\sigma$)
+**Formula:** $\sigma = \sqrt{\frac{\sum(x - \mu)^2}{N}}$
 
-The population standard deviation (σ) is a measure of the dispersion or spread of the values in the population. It is calculated using the formula:
-σ = √(Σ(x - μ)² / N)
+### B. Sample/Estimated Standard Deviation ($s$)
+**Formula:** $s = \sqrt{\frac{\sum(x - \bar{x})^2}{n - 1}}$
 
-Where x represents each value in the population, μ is the population mean, and N is the total number of values in the population.
-The estimated standard deviation (s) is a measure of the dispersion or spread of the values in a sample drawn from the population. It is calculated using the formula:
-s = √(Σ(x - x̄)² / (n - 1))
+---
+
+## 5. Normal Distribution (Gaussian)
+A symmetric, continuous, bell-shaped probability distribution.
+
+**Core Rules:**
+- The Mean, Median, and Mode are exactly the same and hit at the peak center.
+- It is entirely defined by just two parameters: Mean ($\mu$) and Standard Deviation ($\sigma$).
+- **The Empirical Rule (68-95-99.7%):**
+  - $\approx 68\%$ of data falls within **1** standard deviation from the mean ($\pm 1\sigma$).
+  - $\approx 95\%$ of data falls within **2** standard deviations from the mean ($\pm 2\sigma$).
+  - $\approx 99.7\%$ of data falls within **3** standard deviations from the mean ($\pm 3\sigma$).
