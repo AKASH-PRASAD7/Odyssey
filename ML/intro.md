@@ -20,4 +20,9 @@ Field of study that gives computers the ability to learn without being explicitl
  ![alt text](image-5.png)
  ![alt text](image-6.png)
 
-- 
+## Unsupervised Learning
+Grouping or clustering unlabeled data points based on similarity.
+
+![alt text](image-7.png)
+![alt text](image-8.png)
+![alt text](image-9.png)
