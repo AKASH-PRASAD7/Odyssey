@@ -1,4 +1,4 @@
-# 🎓 Engineering Knowledge Base
+# 🎓 Odyssey
 
 A comprehensive learning resource covering Python fundamentals, design patterns, and data science libraries with practical examples and detailed documentation.
 
