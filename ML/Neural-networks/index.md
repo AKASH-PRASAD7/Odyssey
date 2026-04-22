@@ -34,3 +34,22 @@ Neural networks are a type of machine learning algorithm that are inspired by th
 ![alt text](image-17.png)
 ![alt text](image-18.png)
 ![alt text](image-19.png)
+
+## TensorFlow
+
+![alt text](image-20.png)
+![alt text](image-21.png)
+![alt text](image-22.png)
+
+## Data in Tensorflow
+
+![alt text](image-23.png)
+![alt text](image-24.png)
+![alt text](image-25.png)
+
+
+## Builing Neural Network
+
+![alt text](image-26.png)
+![alt text](image-27.png)
+![alt text](image-28.png)
