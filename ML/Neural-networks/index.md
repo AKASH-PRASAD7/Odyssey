@@ -60,6 +60,7 @@ Neural networks are a type of machine learning algorithm that are inspired by th
 ![alt text](image-29.png)
 ![alt text](image-30.png)
 ![alt text](image-34.png)
+![alt text](image-35.png)
 
 ## AGI
 
