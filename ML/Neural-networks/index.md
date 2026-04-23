@@ -53,3 +53,16 @@ Neural networks are a type of machine learning algorithm that are inspired by th
 ![alt text](image-26.png)
 ![alt text](image-27.png)
 ![alt text](image-28.png)
+
+
+## Forward propagation from scratch
+
+![alt text](image-29.png)
+![alt text](image-30.png)
+![alt text](image-34.png)
+
+## AGI
+
+![alt text](image-31.png)
+![alt text](image-32.png)
+![alt text](image-33.png)
