@@ -22,3 +22,11 @@
 
 ![alt text](image-58.png)
 ![alt text](image-59.png)
+
+
+## Adam Optimization
+
+![alt text](image-60.png)
+![alt text](image-61.png)
+![alt text](image-62.png)
+![alt text](image-63.png)
