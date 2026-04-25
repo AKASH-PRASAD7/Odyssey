@@ -19,3 +19,8 @@ Backpropagation is an algorithm used to train artificial neural networks. It is 
 ![alt text](image-74.png)
 ![alt text](image-75.png)
 ![alt text](image-76.png)
+
+## Large Neurak Network
+
+![alt text](image-77.png)
+![alt text](image-78.png)
