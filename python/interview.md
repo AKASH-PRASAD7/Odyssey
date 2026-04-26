@@ -156,8 +156,19 @@ if __name__ == "__main__":
 ```
 
 
-## 10. 
+## 10. Mutable and Immutable (Memory Level)
 
+- **Mutable** — can be changed after creation (`list`, `dict`, `set`)
+- **Immutable** — cannot be changed after creation (`int`, `float`, `str`, `tuple`)
 
+```python
+# Mutable
+a = [1, 2, 3]
+a[0] = 99        # ✅ works
+print(a)          # [99, 2, 3]
 
+# Immutable
+b = "Hello"
+b[0] = "J"        # ❌ TypeError: 'str' does not support item assignment
+```
 
