@@ -172,3 +172,213 @@ b = "Hello"
 b[0] = "J"        # ❌ TypeError: 'str' does not support item assignment
 ```
 
+## 11. Context Managers — `with` statement
+
+- Automatically handles **setup and cleanup** (e.g. closing files, releasing locks).
+- Implements `__enter__()` and `__exit__()` under the hood.
+
+```python
+# Without context manager — must close manually
+f = open("data.txt")
+data = f.read()
+f.close()
+
+# With context manager — auto-closes even if an error occurs
+with open("data.txt") as f:
+    data = f.read()
+```
+
+Custom context manager using a class:
+
+```python
+class DBConnection:
+    def __init__(self, db):
+        self.db = db
+    def __enter__(self):
+        print(f"Connecting to {self.db}")
+        return self
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("Connection closed")
+
+with DBConnection("mydb") as conn:
+    print("Running query")
+# Output: Connecting to mydb → Running query → Connection closed
+```
+
+-- __init__ - constructor
+-- __enter__ - setup (entering context)
+-- __exit__ - cleanup (exiting context)
+
+## 12. `try`, `except`, `else`, `finally`
+
+- `try` — block where errors might occur.
+- `except` — runs if an error occurs in `try`.
+- `else` — runs if **no error** occurred in `try`.
+- `finally` — **always** runs (error or no error).
+
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+else:
+    print("No error occurred")
+finally:
+    print("Always runs")
+```
+
+## 13. Asynchronous Python - `async` and `await`
+
+- `async` defines a coroutine (an async function).
+- `await` pauses execution until the awaited coroutine completes, allowing the event loop to run other tasks.
+- Ideal for **I/O-bound** code (network requests, database queries) to prevent blocking.
+
+```python
+import asyncio
+
+async def fetch_data(delay):
+    print(f"Fetching data after {delay} seconds...")
+    await asyncio.sleep(delay)  # non-blocking pause
+    return f"Data from {delay}s"
+
+async def main():
+    task1 = asyncio.create_task(fetch_data(1))
+    task2 = asyncio.create_task(fetch_data(2))
+    
+    result1 = await task1
+    result2 = await task2
+    print(result1, result2)
+
+if __name__ == "__main__":
+    asyncio.run(main()) # Event loop will run the coroutine
+# Output runs concurrently, not one after the other
+```
+
+## 14. GIL (Global Interpreter Lock)
+
+- GIL is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecode at the same time
+- It is used to simplify memory management and prevent race conditions
+- It is not a problem for CPU-bound tasks (only one thread at a time)
+- It is a problem for I/O-bound tasks (multiple threads waiting for I/O)
+
+## 15. Memory Management
+
+- **Reference counting** — each object tracks how many references point to it; deleted when count hits 0.
+- **Garbage collector** — detects and cleans up **circular references** that reference counting can't handle.
+- **Memory pooling** — Python pre-allocates small objects (ints `-5` to `256`, short strings) for reuse.
+
+```python
+import sys
+
+a = [1, 2, 3]
+print(sys.getrefcount(a))  # reference count (includes the getrefcount arg itself)
+
+del a  # decrements ref count → object freed when it reaches 0
+```
+
+## 16. `eval()` function
+
+- Evaluates a **string as a Python expression** and returns the result.
+- ⚠️ **Security risk** — never use on untrusted input.
+
+```python
+x = eval("2 + 3")   # 5
+
+def cal(a, b, op):
+    return eval(f'{a} {op} {b}')
+
+print(cal(10, 5, '*')) # 50
+
+# Safer alternative for data literals
+import ast
+ast.literal_eval("[1, 2, 3]")  # [1, 2, 3]
+```
+
+## 17. `map()`, `filter()`, `reduce()`
+
+- **`map(fn, iterable)`** — applies `fn` to every item.
+- **`filter(fn, iterable)`** — keeps items where `fn` returns `True`.
+- **`reduce(fn, iterable)`** — cumulatively applies `fn` to reduce to a single value.
+
+```python
+from functools import reduce
+
+nums = [1, 2, 3, 4, 5]
+
+list(map(lambda x: x**2, nums))       # [1, 4, 9, 16, 25]
+list(filter(lambda x: x > 2, nums))   # [3, 4, 5]
+reduce(lambda a, b: a + b, nums)      # 15
+```
+
+## 18. `staticmethod` vs `classmethod`
+
+- **`@staticmethod`** — no access to `self` or `cls`; just a utility function inside a class.
+- **`@classmethod`** — receives `cls` as first arg; can access/modify class state.
+
+```python
+class Math:
+    base = 10
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+    @classmethod
+    def add_to_base(cls, x):
+        return cls.base + x
+
+Math.add(2, 3)        # 5
+Math.add_to_base(5)   # 15
+```
+
+## 19. `__str__` vs `__repr__`
+
+- `__str__` — human-readable string (used by `print()`).
+- `__repr__` — unambiguous developer string (used in REPL / debugging).
+
+```python
+class User:
+    def __init__(self, name):
+        self.name = name
+    def __str__(self):
+        return self.name
+    def __repr__(self):
+        return f"User('{self.name}')"
+
+u = User("Alice")
+print(u)     # Alice        (__str__)
+repr(u)      # User('Alice') (__repr__)
+```
+
+## 20. Multithreading vs Multiprocessing
+
+- **Threading** (`threading`) — concurrent, shares memory, limited by GIL → best for **I/O-bound** tasks.
+- **Multiprocessing** (`multiprocessing`) — parallel, separate memory, bypasses GIL → best for **CPU-bound** tasks.
+
+```python
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
+
+# I/O-bound → threads
+with ThreadPoolExecutor() as pool:
+    results = pool.map(fetch_url, urls)
+
+# CPU-bound → processes
+with ProcessPoolExecutor() as pool:
+    results = pool.map(heavy_compute, data)
+```
+
+## 21. PEP 8
+
+- **PEP 8** — official style guide for Python code
+
+```python
+# imports - always at the top
+import os
+from math import sqrt
+
+# class names - PascalCase
+class MyClass:
+    # method names, variables - snake_case
+    def my_method(self, arg):
+        x = 10
+```
