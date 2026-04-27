@@ -382,3 +382,44 @@ class MyClass:
     def my_method(self, arg):
         x = 10
 ```
+
+## 22. Type Hinting
+
+- Type hints provide optional type annotations that improve code readability and allow static analysis tools to catch type errors.
+- Type hints are not enforced at runtime by default, but they can be checked using tools like `mypy`.
+
+```python
+from typing import List, Dict, Optional
+
+# Function with type hints
+def greet(name: str) -> str:
+    return f"Hello, {name}"
+
+# Function with optional arguments
+def divide(a: float, b: float) -> Optional[float]:
+    if b == 0:
+        return None
+    return a / b
+
+# Function with list and dictionary hints
+def process_data(data: List[Dict[str, int]]) -> List[str]:
+    return [str(item['id']) for item in data]
+
+# Type checking with mypy
+# mypy example.py
+# This would catch type errors before runtime
+```
+
+## 23. Virtual Environment
+
+- **Virtual environment** — isolated Python environment that contains its own set of libraries and dependencies.
+- **`venv`** — built-in module for creating virtual environments.
+- **`pip`** — package installer for Python.
+
+```python
+# Create a virtual environment
+python -m venv .venv
+
+# On macOS and Linux
+source .venv/bin/activate
+```
