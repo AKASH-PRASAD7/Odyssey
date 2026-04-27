@@ -32,3 +32,5 @@
 ## Precision and Recall
 
 ![alt text](image-51.png)
+![alt text](image-52.png)
+![alt text](image-53.png)
