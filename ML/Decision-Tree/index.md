@@ -33,3 +33,7 @@
 ![alt text](image-24.png)
 ![alt text](image-25.png)
 ![alt text](image-26.png)
+
+## When To Use Decision Tress
+
+![alt text](image-27.png)
