@@ -11,4 +11,9 @@
 ![alt text](image-24.png)
 ![alt text](image-25.png)
 ![alt text](image-26.png)
+![alt text](image-27.png)
+
+## ϵ-greedy policy
+
+![alt text](image-28.png)
 
