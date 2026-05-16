@@ -94,6 +94,9 @@ basket = ["apple", "banana", "cherry", "orange"]
 for fruit in basket:
     print(fruit)
 
+for index, fruit in enumerate(basket):
+    print(index, fruit)
+
 if "kiwi" in basket:
     print("kiwi is in the basket")
 else:
